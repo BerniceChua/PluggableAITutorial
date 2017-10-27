@@ -22,6 +22,8 @@ public class ChaseAction1 : Action {
 
     private void Chase(StateController controller) {
         controller.navMeshAgent.destination = controller.chaseTarget.position;
+        Debug.Log("Inside ChaseAction1.Chase()");
+        Debug.Log("controller.navMeshAgent.destination = " + controller.navMeshAgent.destination);
         controller.navMeshAgent.Resume();
     }
 

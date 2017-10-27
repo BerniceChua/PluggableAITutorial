@@ -33,7 +33,7 @@ public class SpawnRandomTargetCubes : MonoBehaviour {
         spawnedTarget = Instantiate(m_targetCube, wayPointsForTargets[0].position, wayPointsForTargets[0].rotation);
         spawnedTarget.name = (spawnedTarget.name + TargetCounterAddToName());
 
-        TargetsAndArrayList.AddToArrayList(spawnedTarget);
+        //TargetsAndArrayList.AddToArrayList(spawnedTarget);
     }
 
     public string TargetCounterAddToName() {

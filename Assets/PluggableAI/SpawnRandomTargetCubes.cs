@@ -13,6 +13,8 @@ public class SpawnRandomTargetCubes : MonoBehaviour {
 
     [SerializeField] Transform[] wayPointsForTargets;
 
+    int m_targetCounter = 0;
+
     //// Use this for initialization
     //   void Start () {
 
@@ -29,6 +31,14 @@ public class SpawnRandomTargetCubes : MonoBehaviour {
         //m_targetCube;
         GameObject spawnedTarget;
         spawnedTarget = Instantiate(m_targetCube, wayPointsForTargets[0].position, wayPointsForTargets[0].rotation);
+        spawnedTarget.name = (spawnedTarget.name + TargetCounterAddToName());
+
+        //TargetsAndArrayList.AddToArrayList(spawnedTarget);
+    }
+
+    public string TargetCounterAddToName() {
+        m_targetCounter++;
+        return m_targetCounter.ToString();
     }
 
 }

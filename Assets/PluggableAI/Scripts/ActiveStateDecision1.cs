@@ -20,11 +20,32 @@ public class ActiveStateDecision1 : Decision {
         //bool chaseTargetIsActive = controller.chaseTarget.gameObject.activeSelf;
         //bool chaseTargetIsActive = FindObjectOfType<Target>().gameObject.activeSelf;
         //if (FindObjectOfType<Target>().gameObject.activeSelf != null) {
-        if (FindObjectOfType<Target>()) {
+        //if (FindObjectOfType<Target>()) {
+        //    TargetsAndArrayList.CountThingsInArrayList();
+        //    Debug.Log("Inside ActiveStateDecision1.Decide()");
+        //    Debug.Log("FindObjectOfType<Target>().name = " + FindObjectOfType<Target>().name);
+        //    return true;
+        //} else {
+        //    return false;
+        //}
+
+        //bool chaseTargetIsActive = TargetsAndArrayList.GetNearestInArrayList().activeSelf;
+        //return chaseTargetIsActive;
+
+        bool chaseTargetIsActive = TargetsAndArrayList.GetNearestInArrayList().activeSelf;
+        //bool chaseTargetIsActive = controller.chaseTarget.gameObject.activeSelf;
+        //if (chaseTargetIsActive) {
+        //Target target = FindObjectOfType<Target>();
+        //if (target != null && TargetsAndArrayList.CountThingsInArrayList() != 0 && chaseTargetIsActive) {
+        if (chaseTargetIsActive) {
+            //Debug.Log(TargetsAndArrayList.CountThingsInArrayList());
+            Debug.Log("Inside ActiveStateDecision1.Decide() \n TargetsAndArrayList.GetNearestInArrayList().name = " + TargetsAndArrayList.GetNearestInArrayList().name);
             return true;
-        } else {
+        }
+        else {
             return false;
         }
+
     }
 
 }

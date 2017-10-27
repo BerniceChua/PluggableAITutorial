@@ -27,11 +27,22 @@ public class LookDecision1 : Decision {
         Debug.DrawRay(controller.eyes.position, controller.eyes.forward.normalized * controller.enemyStats.lookRange, Color.green);
 
         Target target = FindObjectOfType<Target>();
+        //Target target = TargetsAndArrayList.GetNearestInArrayList().GetComponent<Target>();
 
         //if (target.isActiveAndEnabled) {
-        if (target != null) {
-            controller.chaseTarget = target.transform;
-            return true;
+        //if (target != null) {
+        //if (TargetsAndArrayList.GetNearestInArrayList().GetComponent<Target>() != null) {
+        if (TargetsAndArrayList.CountThingsInArrayList() != 0) {
+        //if (target != null && TargetsAndArrayList.CountThingsInArrayList() != 0) {
+            if (TargetsAndArrayList.GetNearestInArrayList().activeSelf) {
+                //controller.chaseTarget = target.transform;
+                controller.chaseTarget = TargetsAndArrayList.GetNearestInArrayList().GetComponent<Target>().transform;
+                Debug.Log("Inside LookDecision1.Look()");
+                Debug.Log("controller.chaseTarget = " + controller.chaseTarget);
+                return true;
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
